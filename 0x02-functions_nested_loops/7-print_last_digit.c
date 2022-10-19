@@ -1,27 +1,18 @@
 #include "main.h"
 
 /**
- * print_sign - prints the sign of a number
- * @n: the number of a sign to be printed
- * Return: 1 if the number is greater than zero
- * 0 of number is zero
- * -1 if number is less than zero
+ * print_last_digits - prints the last digit
+ * @n: the number
+ * Return: value of the last digit
  */
-int print_sign(int n)
+int print_last_digit(int n)
 {
-	if (n > 0)
-	{
-		_putchar('+');
-		return (1);
-	}
-	else if (n == 0)
-	{
-		_putchar('0');
-		return (0);
-	}
-	else
-	{
-		_putchar('-');
-		return (-1);
-	}
+	int ld = n % 10;
+
+	if  (ld < 0)
+		ld *= -1;
+
+	_putchar(ld + '0');
+
+	return (0);
 }
